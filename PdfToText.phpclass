@@ -7415,7 +7415,7 @@ class  PdfTexterUnicodeMap 	extends 	PdfTexterCharacterMap
 	   { return ( count ( $this -> DirectMap ) ) ; }
 
 
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { return  ( $this -> offsetGetSafe ( $offset )  !==  false ) ; }
 
 
@@ -7466,7 +7466,7 @@ class  PdfTexterUnicodeMap 	extends 	PdfTexterCharacterMap
 	    }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   {
 		$code	=  $this -> offsetGetSafe ( $offset ) ;
 
@@ -7654,7 +7654,7 @@ class  PdfTexterEncodingMap 	extends  PdfTexterCharacterMap
 	   { return ( count ( $this -> Map ) ) ; }
 
 
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { 
 		return ( ( ! $this -> Secondary ) ?  
 				isset ( $this -> Map [ $offset ] ) :
@@ -7662,7 +7662,7 @@ class  PdfTexterEncodingMap 	extends  PdfTexterCharacterMap
 	    }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   {
 		if  ( ! $this -> Secondary )
 		   {
@@ -7745,11 +7745,11 @@ abstract class  PdfTexterAdobeMap	extends  PdfTexterCharacterMap
 	   { return ( count ( $this -> $Map [ $this -> Variant ] ) ) ; }
 
 
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { return ( isset ( $this -> Map [ $this-> Variant ] [ $offset ] ) ) ; }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   {
 		if  ( isset ( $this -> Map [ $this-> Variant ] [ $offset ] ) )
 			$ord		=  $this -> Map [ $this -> Variant ] [ $offset ] ;
@@ -8321,11 +8321,11 @@ abstract class	PdfTexterCIDMap		extends  PdfTexterCharacterMap
 	   { return ( count ( $this -> Map ) ) ; }
 
 
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { return ( isset ( $this -> Map [ 'plain' ] [ $offset ] ) ) ; }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   {
 		if  ( isset ( $this -> Map [ 'plain' ] [ $offset ] ) )
 		   {
@@ -10369,11 +10369,11 @@ class  PdftoTextFormDefinitions		// extends		Object
 	   { return ( new ArrayIterator ( $this -> Definitions ) ) ; }
 
 
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { return ( $offset  >=  0  &&  $offset  <  count ( $this -> Definitions ) ) ; }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   { return ( $this -> Definitions [ $offset ] ) ; }
 
 
@@ -11407,11 +11407,11 @@ class  PdfToTextCaptureDefinitions	// extends		Object
 
 
 	// ArrayAccess interface
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { return ( isset ( $this -> ShapeDefinitions [ $offset ] ) ) ; }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   { return ( $this -> ShapeDefinitions [ $offset ] ) ; }
 
 
@@ -12151,11 +12151,11 @@ class  PdfToTextCaptureApplicablePages		//extends		Object
 
 
 	// Array access interface
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { return ( isset ( $this -> PageMap [ $offset ] ) ) ; }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   { return ( ( isset ( $this -> PageMap [ $offset ] ) ) ?  true : false ) ; }
 
 
@@ -12640,7 +12640,7 @@ class  PdfToTextCapturedLine			extends		PdfToTextCapturedText
 	   { return ( new ArrayIterator ( $this -> Columns ) ) ; }
 
 
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { 
 		if  ( is_numeric ( $offset ) )
 			return ( $offset  >=  0  &&  $offset  <  count ( $this -> Columns ) ) ; 
@@ -12649,7 +12649,7 @@ class  PdfToTextCapturedLine			extends		PdfToTextCapturedText
 	    }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   {
 		if  ( is_numeric ( $offset ) )
 			return ( $this -> Columns [ $offset ] ) ; 
@@ -12713,11 +12713,11 @@ class  PdfToTextCapturedLines			//extends		Object
 	   { return ( new ArrayIterator ( $this -> Lines ) ) ; }
 
 
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { return ( $offset  >=  0  &&  $offset  <  count ( $this -> Lines ) ) ; }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   { return ( $this -> Captures [ $offset ] ) ; }
 
 
@@ -12921,11 +12921,11 @@ class  PdfToTextCapture				//extends		Object
 	   { return ( new ArrayIterator ( $this -> Captures ) ) ; }
 
 
-	public function  offsetExists ( $offset )
+	public function  offsetExists ( $offset ): bool
 	   { return ( $offset  >=  0  &&  $offset  <  count ( $this -> Captures ) ) ; }
 
 
-	public function  offsetGet ( $offset )
+	public function  offsetGet ( $offset ): mixed
 	   { return ( $this -> Captures [ $offset ] ) ; }
 
 
